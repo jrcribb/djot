@@ -790,6 +790,25 @@ See the [Epilogue][].
 # Epilogue
 ```
 
+## Security
+
+Djot renderers do not necessarily sanitize HTML output. If you render
+untrusted djot input to HTML, the resulting HTML can contain executable
+JavaScript or otherwise unsafe markup, and should be sanitized before it
+is served in a browser.
+
+In particular, unsafe HTML can be produced through:
+
+- raw inline or block content marked for HTML output,
+- attributes such as `onclick`, `srcdoc`, or `formaction`,
+- unsafe URL schemes in links or images, such as `javascript:` or
+  `data:`.
+
+Applications that render user-supplied djot to HTML should sanitize the
+rendered HTML with a sanitizer appropriate for their output environment.
+Sanitization is output-format-specific and is the responsibility of the
+consuming application.
+
 ## Nesting limits
 
 Conforming implementations can impose reasonable limits on

@@ -309,6 +309,9 @@ These goals motivated the following decisions:
 
 For a full syntax reference, see the
 [syntax description](https://htmlpreview.github.io/?https://github.com/jgm/djot/blob/master/doc/syntax.html).
+If you render untrusted djot input to HTML, see the Security section
+there; HTML output is not necessarily sanitized and should be sanitized
+downstream before being served in a browser.
 
 A vim syntax highlighting definition for djot is provided in
 `editors/vim/`.
@@ -358,4 +361,3 @@ There is no official MIME type, but `text/x-djot` may be used.
 ## License
 
 The code and documentation are released under the MIT license.
-
